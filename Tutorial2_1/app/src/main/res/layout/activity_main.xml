@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/number1"
+        android:layout_width="403dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="94dp"
+        android:ems="10"
+        android:hint="첫 번째 숫자"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/addButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/number2"
+        android:layout_width="403dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="575dp"
+        android:ems="10"
+        android:hint="두 번째 숫자"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number1" />
+
+    <Button
+        android:id="@+id/divideButton"
+        android:layout_width="81dp"
+        android:layout_height="58dp"
+        android:text="나누기"
+        android:onClick="divideClick"
+        app:layout_constraintBaseline_toBaselineOf="@+id/multiplyButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/multiplyButton" />
+
+    <Button
+        android:id="@+id/subtractButton"
+        android:layout_width="84dp"
+        android:layout_height="50dp"
+        android:text="빼기"
+        android:onClick="subTractClick"
+        app:layout_constraintBaseline_toBaselineOf="@+id/multiplyButton"
+        app:layout_constraintEnd_toStartOf="@+id/multiplyButton"
+        app:layout_constraintStart_toEndOf="@+id/addButton" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="512dp"
+        android:text="더하기"
+        android:onClick="addClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/subtractButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number1" />
+
+    <Button
+        android:id="@+id/multiplyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="곱하기"
+        android:onClick="multiplyClick"
+        app:layout_constraintEnd_toStartOf="@+id/divideButton"
+        app:layout_constraintStart_toEndOf="@+id/subtractButton"
+        app:layout_constraintTop_toBottomOf="@+id/number2" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="235dp" />
+
+</LinearLayout>
