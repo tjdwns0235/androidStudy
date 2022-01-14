@@ -9,6 +9,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -54,13 +56,27 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                FragmentManager manager = getFragmentManager();
+                Fragment fragment = null;
                 int id = item.getItemId();
 
                 switch (id) {
-                    case
+                    case R.id.nav_first_layout:
+                            fragment = new FirstLayout();
+                        break;
+                    case R.id.nav_second_layout:
+                            fragment = new SecondLayout();
+                        break;
                 }
-                return false;
+                if (fragment != null) {
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    // Replace whatever is in the fragment_container view with this fragment,
+                    // and add the transaction to the back stack
+                    transaction.replace(R.id.nav_host_fragment_content_main, fragment);
+
+                    // Commit the transaction
+                    transaction.commit();
+                }
+                return true;
             }
         });
     }
